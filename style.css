@@ -1,0 +1,70 @@
+/* style.css - Focus on Readability and Contrast */
+
+/* 1. Base App Container */
+.stApp {
+    background-color: #f8f9fa; /* Very Light Gray/Off-White background */
+    color: #343a40; /* Dark Gray text for contrast */
+}
+.main .block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 2. Main Title (H1) */
+h1 {
+    color: #007bff; /* Primary Blue */
+    text-align: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    font-size: 2.5em;
+}
+
+/* 3. File Uploader Area */
+.stFileUploader {
+    margin-top: 20px;
+    border: 2px dashed #adb5bd; /* Medium Gray border */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: white; /* White upload box for maximum contrast */
+}
+
+/* 4. Diagnosis Button */
+.stButton button {
+    /* Use !important to override any Streamlit defaults for the button */
+    background-color: #28a745 !important; /* Standard Success Green */
+    color: white !important; /* White text on green button */
+    border: none;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 100%;
+}
+
+/* 5. Streamlit Alert Boxes (High Specificity Overrides) */
+/* This targets the internal elements of the alert boxes for better visibility */
+
+/* SUCCESS Alert (Green for Benign) */
+[data-testid="stAlertSuccess"] {
+    background-color: #d4edda !important; /* Very light green background */
+    border-color: #c3e6cb !important;
+}
+/* Ensure the text inside the Success alert is dark */
+[data-testid="stAlertSuccess"] * { 
+    color: #155724 !important; /* Dark Green Text */
+}
+
+/* ERROR Alert (Red for High Alert/Malignancy) */
+[data-testid="stAlertError"] {
+    background-color: #f8d7da !important; /* Very light red background */
+    border-color: #f5c6cb !important;
+}
+/* Ensure the text inside the Error alert is dark */
+[data-testid="stAlertError"] * { 
+    color: #721c24 !important; /* Dark Red Text */
+}
